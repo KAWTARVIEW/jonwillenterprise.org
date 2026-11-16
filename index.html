@@ -1,128 +1,629 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HUNANIMA - Machines Agricoles Simples</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JON-WILL ENTERPRISE, LLC. | Real Estate Leasing &amp; Property Portfolio</title>
+  <meta name="description" content="Private independent real estate lessors, residential and commercial property leasing, and asset management in Atlanta, Georgia." />
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            limestone: '#F7F6F2',
+            slateEvergreen: '#132226',
+            forestSlate: '#1C3036',
+            sageTeal: {
+              DEFAULT: '#2B5B5E',
+              light: '#438185',
+              dark: '#1E4245',
+            },
+            warmBrass: '#B5894C',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'estate-glow': '0 0 40px -10px rgba(43, 91, 94, 0.30)',
+            'card-estate': '0 20px 40px -12px rgba(19, 34, 38, 0.12)',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fefefe;
-      color: #333;
+      background-color: #F7F6F2;
+      color: #132226;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
     }
-    header {
-      background-color: #2e7d32; /* Vert foncé */
-      color: #fdd835; /* Jaune vif */
-      padding: 20px;
-      text-align: center;
+
+    .estate-gradient-text {
+      background: linear-gradient(135deg, #2B5B5E 0%, #438185 50%, #B5894C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-    }
-    nav {
-      background-color: #fdd835;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #2e7d32;
-    }
-    .hero {
-      background: url('https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg') no-repeat center center/cover;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      font-size: 2em;
-    }
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    section h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .gallery img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    footer {
-      background-color: #2e7d32;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    footer p {
-      margin: 5px 0;
+
+    .glass-panel-estate {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(43, 91, 94, 0.22);
     }
   </style>
 </head>
-<body>
+<body class="antialiased selection:bg-sageTeal selection:text-white">
 
-  <header>
-    <h1>HUNANIMA</h1>
-    <p>Machines Agricoles Simples et Fiables</p>
+  <!-- STICKY NAVIGATION HEADER -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b border-sageTeal/15 bg-limestone/95 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Identity -->
+        <a href="#hero" class="flex items-center gap-3.5 group">
+          <div class="w-10 h-10 rounded-lg border border-warmBrass/50 bg-slateEvergreen flex items-center justify-center shadow-estate-glow group-hover:border-warmBrass transition-colors">
+            <svg class="w-5 h-5 text-warmBrass" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 21H21M4 21V9L12 3L20 9V21M9 21V14H15V21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block font-serif text-base sm:text-lg font-bold tracking-wider text-slateEvergreen leading-none">JON-WILL ENTERPRISE</span>
+            <span class="block text-[10px] uppercase tracking-[0.24em] text-sageTeal font-bold mt-1">LLC. &bull; Real Estate Leasing &amp; Holdings</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slateEvergreen/80">
+          <a href="#gallery" class="hover:text-sageTeal transition-colors">Properties</a>
+          <a href="#focus" class="hover:text-sageTeal transition-colors">Leasing Portfolio</a>
+          <a href="#studio" class="hover:text-sageTeal transition-colors">Atlanta Office</a>
+          <a href="#contact" class="hover:text-sageTeal transition-colors">Contact</a>
+        </nav>
+
+        <!-- Primary CTA -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="tel:+12346773812" class="hidden lg:flex items-center gap-1.5 text-xs text-slateEvergreen/75 hover:text-slateEvergreen transition-colors tabular-nums font-semibold">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-warmBrass"></i>
+            +1 (234) 677-3812
+          </a>
+          <a href="#contact" class="px-5 py-2.5 rounded-lg bg-sageTeal hover:bg-sageTeal-dark text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-md hover:shadow-estate-glow">
+            Leasing Desk
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-lg text-slateEvergreen hover:text-sageTeal border border-sageTeal/25">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-limestone border-b border-sageTeal/20 px-6 py-5 space-y-4 shadow-lg">
+      <a href="#gallery" class="block text-sm font-medium text-slateEvergreen hover:text-sageTeal">Property Showcase</a>
+      <a href="#focus" class="block text-sm font-medium text-slateEvergreen hover:text-sageTeal">Leasing Portfolio</a>
+      <a href="#studio" class="block text-sm font-medium text-slateEvergreen hover:text-sageTeal">Atlanta Headquarters</a>
+      <a href="#contact" class="block text-sm font-medium text-slateEvergreen hover:text-sageTeal">Leasing &amp; Contact</a>
+      <div class="pt-3 border-t border-sageTeal/15 flex flex-col gap-2">
+        <a href="tel:+12346773812" class="text-xs text-slateEvergreen/80 font-medium">+1 (234) 677-3812</a>
+        <a href="mailto:support@jonwillenterprise.org" class="text-xs text-sageTeal font-semibold">support@jonwillenterprise.org</a>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main>
+    <!-- ===================================================================== -->
+    <!-- SECTION 1: HERO & VISUAL SHOWCASE                                     -->
+    <!-- ===================================================================== -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-limestone">
+      <div class="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-sageTeal/12 blur-[110px] pointer-events-none"></div>
 
-  <div class="hero">
-    <p>Votre partenaire pour des machines agricoles durables</p>
-  </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Text Column -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sageTeal/30 bg-white text-xs uppercase tracking-[0.2em] text-sageTeal font-bold shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-warmBrass animate-pulse"></span>
+              Atlanta, Georgia &bull; Lessors of Real Estate
+            </div>
 
-  <section id="about">
-    <h2>À propos de nous</h2>
-    <p>
-      Chez <strong>HUNANIMA</strong>, nous nous spécialisons dans la fabrication et la distribution de 
-      <strong>machines agricoles simples</strong> pour faciliter le travail des agriculteurs. 
-      Nos solutions combinent <em>durabilité, efficacité et innovation</em> afin de répondre aux besoins de toutes les exploitations.
-    </p>
-  </section>
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-bold leading-[1.1] tracking-tight text-slateEvergreen">
+              Premier Real Estate <span class="estate-gradient-text italic">Leasing</span> &amp; Property Stewardship.
+            </h1>
 
-  <section id="gallery">
-    <h2>Nos Machines</h2>
-    <div class="gallery">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Machine agricole">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement agricole simple">
+            <p class="text-base sm:text-lg text-slateEvergreen/75 max-w-xl leading-relaxed">
+              <strong class="text-slateEvergreen font-semibold">JON-WILL ENTERPRISE, LLC.</strong> acquires, manages, and leases residential and commercial real estate assets across the greater Atlanta metropolitan area.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="#contact" class="inline-flex items-center gap-2 px-7 py-4 rounded-lg bg-sageTeal hover:bg-sageTeal-dark text-white font-semibold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-estate-glow">
+                Inquire Availability
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="#gallery" class="inline-flex items-center gap-2 px-7 py-4 rounded-lg border border-sageTeal/30 hover:border-warmBrass bg-white text-slateEvergreen font-semibold text-xs uppercase tracking-wider transition-all">
+                View Properties
+                <i data-lucide="building-2" class="w-4 h-4 text-warmBrass"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Image Column -->
+          <div class="lg:col-span-6">
+            <div class="relative rounded-2xl overflow-hidden border border-sageTeal/20 shadow-2xl group">
+              <img 
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85" 
+                alt="Modern residential and commercial architectural real estate property in Atlanta" 
+                class="w-full h-[440px] sm:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slateEvergreen/75 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 p-5 glass-panel-estate rounded-xl flex items-center justify-between">
+                <div>
+                  <span class="text-[11px] uppercase tracking-widest text-warmBrass font-bold block">Principal Real Estate Office</span>
+                  <span class="font-serif text-lg font-bold text-slateEvergreen">7305 Cardigan Cir, Atlanta, GA</span>
+                </div>
+                <div class="w-10 h-10 rounded-lg bg-slateEvergreen text-warmBrass flex items-center justify-center shrink-0">
+                  <i data-lucide="key-round" class="w-5 h-5"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 2: VISUAL GALLERY (LIGHTBOX CAPABLE)                          -->
+    <!-- ===================================================================== -->
+    <section id="gallery" class="py-20 bg-white border-y border-sageTeal/15">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-warmBrass font-bold">01 / Asset Showcase</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slateEvergreen mt-1">
+            Residential &amp; Commercial Holdings
+          </h2>
+          <p class="text-slateEvergreen/70 text-sm sm:text-base mt-2">
+            Select any property image to inspect in full resolution.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-sageTeal/20 shadow-card-estate cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85" data-title="Executive Single-Family & Multi-Family Residences">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=85" alt="Modern residential real estate exterior" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slateEvergreen/85 via-slateEvergreen/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-warmBrass font-bold">Residential Leasing</span>
+              <h3 class="font-serif text-xl font-bold mt-0.5">Modern Residential Properties</h3>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-sageTeal/20 shadow-card-estate cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" data-title="Commercial Office & Retail Spaces">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=85" alt="Commercial real estate building exterior" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slateEvergreen/85 via-slateEvergreen/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-warmBrass font-bold">Commercial Leasing</span>
+              <h3 class="font-serif text-xl font-bold mt-0.5">Commercial &amp; Professional Suites</h3>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group relative rounded-2xl overflow-hidden border border-sageTeal/20 shadow-card-estate cursor-pointer lightbox-trigger" data-img="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" data-title="Turnkey Interior Finishes & Property Care">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85" alt="Luxury residential interior living space" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slateEvergreen/85 via-slateEvergreen/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <span class="text-[10px] uppercase tracking-widest text-warmBrass font-bold">Interior Standards</span>
+              <h3 class="font-serif text-xl font-bold mt-0.5">Refined Living &amp; Workspace Interiors</h3>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 3: INTERACTIVE LEASING PORTFOLIO                              -->
+    <!-- ===================================================================== -->
+    <section id="focus" class="py-20 bg-limestone">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-sageTeal font-bold">02 / Real Estate Operations</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slateEvergreen mt-1">
+            Leasing &amp; Asset Management Focus
+          </h2>
+          <p class="text-slateEvergreen/70 text-sm sm:text-base mt-2">
+            Select a portfolio division below to view our leasing and property standards.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left Tabs -->
+          <div class="lg:col-span-5 space-y-3">
+            <button type="button" data-focus="0" class="focus-tab w-full text-left p-5 rounded-xl border border-sageTeal bg-white shadow-sm transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-warmBrass font-bold">Portfolio I</span>
+                <h3 class="font-serif text-xl font-bold text-slateEvergreen mt-0.5">Residential Property Leasing</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-sageTeal"></i>
+            </button>
+
+            <button type="button" data-focus="1" class="focus-tab w-full text-left p-5 rounded-xl border border-sageTeal/20 bg-white/70 hover:border-sageTeal/60 transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-slateEvergreen/50 group-hover:text-warmBrass font-bold">Portfolio II</span>
+                <h3 class="font-serif text-xl font-bold text-slateEvergreen mt-0.5">Commercial &amp; Mixed-Use Spaces</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-slateEvergreen/40 group-hover:text-sageTeal"></i>
+            </button>
+
+            <button type="button" data-focus="2" class="focus-tab w-full text-left p-5 rounded-xl border border-sageTeal/20 bg-white/70 hover:border-sageTeal/60 transition-all flex items-center justify-between group">
+              <div>
+                <span class="text-[10px] uppercase tracking-widest text-slateEvergreen/50 group-hover:text-warmBrass font-bold">Portfolio III</span>
+                <h3 class="font-serif text-xl font-bold text-slateEvergreen mt-0.5">Long-Term Real Estate Holdings</h3>
+              </div>
+              <i data-lucide="chevron-right" class="w-5 h-5 text-slateEvergreen/40 group-hover:text-sageTeal"></i>
+            </button>
+          </div>
+
+          <!-- Right Display Card with Image & Details -->
+          <div class="lg:col-span-7 bg-white rounded-2xl border border-sageTeal/25 p-8 shadow-card-estate relative overflow-hidden">
+            <div id="focus-content" class="space-y-6">
+              <img id="focus-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85" alt="Residential Property Leasing" class="w-full h-64 object-cover rounded-xl border border-sageTeal/15">
+              <div>
+                <span id="focus-tag" class="text-xs uppercase tracking-widest text-warmBrass font-bold">Residential Property Leasing</span>
+                <h3 id="focus-title" class="font-serif text-2xl sm:text-3xl font-bold text-slateEvergreen mt-1">Well-Maintained Homes in Desirable Atlanta Neighborhoods</h3>
+              </div>
+              <p id="focus-desc" class="text-slateEvergreen/75 text-sm sm:text-base leading-relaxed">
+                Responsive tenant support, transparent lease agreements, and proactive preventative maintenance across our North Atlanta and Sandy Springs residential properties.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 4: ATLANTA HEADQUARTERS & STEWARDSHIP                         -->
+    <!-- ===================================================================== -->
+    <section id="studio" class="py-20 bg-white border-y border-sageTeal/15">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-warmBrass font-bold">03 / Regional Presence</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slateEvergreen mt-1">
+            Atlanta Office &amp; Lessor Standards
+          </h2>
+          <p class="text-slateEvergreen/70 text-sm sm:text-base mt-2">
+            Anchored in North Atlanta (Sandy Springs) with dedicated local oversight.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-sageTeal/20 bg-limestone p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-lg bg-slateEvergreen text-warmBrass flex items-center justify-center mb-4">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-slateEvergreen">Registered Address</h3>
+              <p class="text-sm text-slateEvergreen/75 mt-2">
+                7305 Cardigan Cir<br>Atlanta, GA 30328-1930, United States
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-sageTeal/15 text-xs text-sageTeal font-bold uppercase tracking-wider">
+              Atlanta, Georgia
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-sageTeal/20 bg-limestone p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-lg bg-slateEvergreen text-warmBrass flex items-center justify-center mb-4">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-slateEvergreen">Direct Lessor Ownership</h3>
+              <p class="text-sm text-slateEvergreen/75 mt-2">
+                Private independent ownership ensuring direct accountability, fair leasing terms, and sustained asset upkeep.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-sageTeal/15 text-xs text-sageTeal font-bold uppercase tracking-wider">
+              NAICS 5311 &bull; Real Estate Lessors
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-sageTeal/20 bg-limestone p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-lg bg-slateEvergreen text-warmBrass flex items-center justify-center mb-4">
+                <i data-lucide="calendar-check" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-slateEvergreen">Leasing &amp; Tours</h3>
+              <p class="text-sm text-slateEvergreen/75 mt-2">
+                Private property showings, tenant inquiries, and commercial lease consultations scheduled directly with our office.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-sageTeal/15 text-xs text-sageTeal font-bold uppercase tracking-wider">
+              Direct Management Desk
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SECTION 5: CONTACT & LEASING INQUIRY                                  -->
+    <!-- ===================================================================== -->
+    <section id="contact" class="py-20 bg-limestone relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Left Info Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="text-xs uppercase tracking-[0.25em] text-sageTeal font-bold">04 / Leasing &amp; Asset Desk</span>
+              <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slateEvergreen mt-1">
+                Connect With Our Office.
+              </h2>
+              <p class="text-slateEvergreen/75 text-sm sm:text-base mt-2 leading-relaxed">
+                Reach out to our Atlanta real estate desk regarding current lease availability, property tours, or commercial inquiries.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-xl bg-white border border-sageTeal/20 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-slateEvergreen text-warmBrass flex items-center justify-center">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-[10px] uppercase tracking-wider text-slateEvergreen/60 block">Leasing Desk Email</span>
+                    <a href="mailto:support@jonwillenterprise.org" class="text-slateEvergreen font-semibold text-sm hover:text-sageTeal break-all">
+                      support@jonwillenterprise.org
+                    </a>
+                  </div>
+                </div>
+                <button type="button" id="copy-email-btn" title="Copy Email" class="p-2 rounded-lg border border-sageTeal/20 hover:border-sageTeal text-slateEvergreen/70 hover:text-sageTeal transition-colors">
+                  <i data-lucide="copy" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <div class="p-4 rounded-xl bg-white border border-sageTeal/20 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-slateEvergreen text-warmBrass flex items-center justify-center">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase tracking-wider text-slateEvergreen/60 block">Direct Telephone</span>
+                  <a href="tel:+12346773812" class="text-slateEvergreen font-semibold text-base hover:text-sageTeal tabular-nums">
+                    +1 (234) 677-3812
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form Column -->
+          <div class="lg:col-span-7">
+            <div class="rounded-2xl border border-sageTeal/25 bg-white p-8 shadow-card-estate">
+              <h3 class="font-serif text-2xl font-bold text-slateEvergreen mb-2">Leasing &amp; Property Inquiry</h3>
+              <p class="text-xs text-slateEvergreen/60 mb-6">Routed directly to JON-WILL ENTERPRISE, LLC.</p>
+
+              <form id="inquiry-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="name" class="block text-xs uppercase tracking-wider text-slateEvergreen/75 font-bold mb-1.5">Full Name *</label>
+                    <input type="text" id="name" required placeholder="e.g., Jordan Whitaker" class="w-full px-4 py-3 rounded-lg bg-limestone border border-sageTeal/20 text-slateEvergreen text-sm placeholder-slateEvergreen/35 focus:outline-none focus:border-sageTeal">
+                  </div>
+                  <div>
+                    <label for="email" class="block text-xs uppercase tracking-wider text-slateEvergreen/75 font-bold mb-1.5">Email Address *</label>
+                    <input type="email" id="email" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-lg bg-limestone border border-sageTeal/20 text-slateEvergreen text-sm placeholder-slateEvergreen/35 focus:outline-none focus:border-sageTeal">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="message" class="block text-xs uppercase tracking-wider text-slateEvergreen/75 font-bold mb-1.5">Leasing Needs &amp; Timeline *</label>
+                  <textarea id="message" rows="4" required placeholder="Specify residential or commercial space requirements, desired move-in date, or general inquiry..." class="w-full px-4 py-3 rounded-lg bg-limestone border border-sageTeal/20 text-slateEvergreen text-sm placeholder-slateEvergreen/35 focus:outline-none focus:border-sageTeal"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-lg bg-sageTeal hover:bg-sageTeal-dark text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2">
+                  <span>Submit Leasing Inquiry</span>
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </form>
+
+              <!-- Success State -->
+              <div id="form-success" class="hidden text-center py-8 space-y-3">
+                <div class="w-12 h-12 rounded-full bg-sageTeal/20 border border-sageTeal flex items-center justify-center text-sageTeal mx-auto">
+                  <i data-lucide="check" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-serif text-2xl font-bold text-slateEvergreen">Inquiry Prepared</h4>
+                <p class="text-xs text-slateEvergreen/75 max-w-sm mx-auto">
+                  Thank you, <span id="confirm-name" class="font-semibold text-slateEvergreen"></span>. Your message has been formatted for <span class="text-sageTeal font-semibold">support@jonwillenterprise.org</span>.
+                </p>
+                <div class="pt-2">
+                  <a id="mailto-fallback" href="mailto:support@jonwillenterprise.org" class="px-5 py-2.5 rounded-lg bg-sageTeal text-white text-xs font-semibold uppercase tracking-wider inline-block">
+                    Open in Mail Client
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slateEvergreen text-limestone/75 py-12 text-xs border-t border-warmBrass/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+        <div>
+          <span class="font-serif text-lg font-bold text-white block">JON-WILL ENTERPRISE, LLC.</span>
+          <span class="text-[10px] uppercase tracking-widest text-warmBrass block mt-0.5">Lessors of Real Estate &amp; Property Management</span>
+        </div>
+        <div class="text-center md:text-right">
+          <p>7305 Cardigan Cir, Atlanta, GA 30328-1930</p>
+          <p class="mt-1">Email: <a href="mailto:support@jonwillenterprise.org" class="text-warmBrass hover:underline">support@jonwillenterprise.org</a> | Phone: <a href="tel:+12346773812" class="text-white hover:underline tabular-nums">+1 (234) 677-3812</a></p>
+        </div>
+      </div>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-limestone/50">
+        <p>&copy; <span id="current-year"></span> JON-WILL ENTERPRISE, LLC. All Rights Reserved.</p>
+        <p>Private independent real estate lessor.</p>
+      </div>
     </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p><strong>Email :</strong> admin@tyusex.shop</p>
-    <p><strong>Téléphone :</strong> +33 7 38 50 26 36</p>
-    <p><strong>Adresse :</strong> Avenue Baratier, Montmorency, 95160, France</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 HUNANIMA - Tous droits réservés.</p>
   </footer>
 
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" class="hidden fixed inset-0 z-50 bg-slateEvergreen/95 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full">
+      <button type="button" id="lightbox-close" class="absolute -top-12 right-0 text-white hover:text-warmBrass p-2">
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="Expanded View" class="w-full max-h-[80vh] object-contain rounded-xl border border-warmBrass/40">
+      <p id="lightbox-caption" class="text-white text-center font-serif text-xl mt-4"></p>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-4 py-3 rounded-lg bg-slateEvergreen border border-warmBrass text-white text-xs font-semibold uppercase tracking-wider shadow-lg">
+    Email copied to clipboard
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    lucide.createIcons();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Lightbox Functionality
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        lightboxImg.src = trigger.dataset.img;
+        lightboxCaption.textContent = trigger.dataset.title;
+        lightboxModal.classList.remove('hidden');
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => lightboxModal.classList.add('hidden'));
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) lightboxModal.classList.add('hidden');
+    });
+
+    // Interactive Focus Tabs
+    const focusData = [
+      {
+        tag: 'Residential Property Leasing',
+        title: 'Well-Maintained Homes in Desirable Atlanta Neighborhoods',
+        desc: 'Responsive tenant support, transparent lease agreements, and proactive preventative maintenance across our North Atlanta and Sandy Springs residential properties.',
+        img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85'
+      },
+      {
+        tag: 'Commercial & Mixed-Use Spaces',
+        title: 'Flexible Office & Retail Square Footage',
+        desc: 'Strategically positioned commercial suites offering high visibility, accessible parking, and adaptable layouts for growing businesses.',
+        img: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85'
+      },
+      {
+        tag: 'Long-Term Real Estate Holdings',
+        title: 'Disciplined Acquisition & Capital Improvements',
+        desc: 'Focused on multi-decade property stewardship, structural modernization, and sustainable value creation across Metro Atlanta.',
+        img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=85'
+      }
+    ];
+
+    const focusTabs = document.querySelectorAll('.focus-tab');
+    const focusImg = document.getElementById('focus-img');
+    const focusTag = document.getElementById('focus-tag');
+    const focusTitle = document.getElementById('focus-title');
+    const focusDesc = document.getElementById('focus-desc');
+
+    focusTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        focusTabs.forEach(t => {
+          t.classList.remove('border-sageTeal', 'bg-white', 'shadow-sm');
+          t.classList.add('border-sageTeal/20', 'bg-white/70');
+          t.querySelector('span').classList.remove('text-warmBrass');
+          t.querySelector('span').classList.add('text-slateEvergreen/50');
+          t.querySelector('i').classList.remove('text-sageTeal');
+          t.querySelector('i').classList.add('text-slateEvergreen/40');
+        });
+
+        tab.classList.remove('border-sageTeal/20', 'bg-white/70');
+        tab.classList.add('border-sageTeal', 'bg-white', 'shadow-sm');
+        tab.querySelector('span').classList.add('text-warmBrass');
+        tab.querySelector('i').classList.add('text-sageTeal');
+
+        const data = focusData[index];
+        focusImg.src = data.img;
+        focusTag.textContent = data.tag;
+        focusTitle.textContent = data.title;
+        focusDesc.textContent = data.desc;
+      });
+    });
+
+    // Copy Email Toast
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const toast = document.getElementById('toast');
+    copyEmailBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('support@jonwillenterprise.org').then(() => {
+        toast.classList.remove('hidden');
+        setTimeout(() => toast.classList.add('hidden'), 2500);
+      });
+    });
+
+    // Inquiry Form Submission
+    const inquiryForm = document.getElementById('inquiry-form');
+    const formSuccess = document.getElementById('form-success');
+    const confirmName = document.getElementById('confirm-name');
+    const mailtoFallback = document.getElementById('mailto-fallback');
+
+    inquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      confirmName.textContent = name;
+      const subject = encodeURIComponent(`Real Estate Leasing Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nLeasing Inquiry:\n${message}`);
+      mailtoFallback.href = `mailto:support@jonwillenterprise.org?subject=${subject}&body=${body}`;
+
+      inquiryForm.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+    });
+  </script>
 </body>
 </html>
